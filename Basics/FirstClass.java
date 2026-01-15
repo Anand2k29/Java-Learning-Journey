@@ -1,28 +1,57 @@
+import java.util.Scanner;
 
-// Creating a class
-class User{  
-  // members - methods & properties 
-public String firstName; 
-public String lastName;
+public class FirstClass {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        // 1. Create the Object
+        Person user = new Person();
 
-  public String getFullName(){
-    return firstName +" "+ lastName;
+        // --- FIRST NAME ---
+        System.out.println("Enter your First Name: ");
+        String inputFirst = sc.nextLine();
+        // Use SETTER to save data securely into the object
+        user.setFirstName(inputFirst);
 
-  }
+        // --- LAST NAME ---
+        System.out.println("Enter your Last Name: ");
+        String inputLast = sc.nextLine();
+        // Use SETTER to save data
+        user.setLastName(inputLast);
+
+        // --- OUTPUT ---
+        // Use GETTER to retrieve data from the object to print it
+        System.out.println("Full Name: " + user.getFirstName() + " " + user.getLastName());
+    }
 }
 
+// This is the blueprint class (You can put this at the bottom of the same file)
+class Person {
+    // Private variables (Data is hidden)
+    private String firstName;
+    private String lastName;
 
-//Main class
-public class FirstClass{      
-  public static void main(String[] args) {
+    // --- GETTERS & SETTERS for First Name ---
+    
+    // Set (Write)
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;    // this. is not a function its a keyword .... which tells is " My own "
+    }
+    
+    // Get (Read)
+    public String getFirstName() {
+        return firstName;
+    }
 
-    //Creating a class Object ( user)
-      User user = new User();   
-      user.firstName = "Anand Minejes";
-      user.lastName = " sexy ";
+    // --- GETTERS & SETTERS for Last Name ---
+    
+    // Set (Write)
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
 
-      //For Output 
-      System.out.println(user.getFullName()); //getFullName is a method (a function),
-  }                                           //you must add parentheses () at the end.
+    // Get (Read)
+    public String getLastName() {
+        return lastName;
+    }
 }
-
