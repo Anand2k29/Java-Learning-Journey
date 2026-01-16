@@ -57,3 +57,20 @@ class Person {
         return lastName;
     }
 }
+
+/*
+     Visual Summary of the Flow
+1. Main: "I have input 'John'."
+
+2. Main -> Person (Setter): "Here, hold this for me."
+
+3. Person: "Okay, locked in the vault." (Flow returns to Main)
+
+4. Main: "I need to print. Give me the name."
+
+5. Main -> Person (Getter): "Open the vault and show me the name."
+
+6. Person: "Here it is: 'John'." (Flow returns to Main)
+
+7. Main: Prints the result.
+*/
