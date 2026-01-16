@@ -37,7 +37,8 @@ public class BmiCalculator {
 
             // --- STEP 5: Print BMI Value ---
             // "%.1f" formats the number to have exactly 1 decimal place (e.g., 24.5)
-            System.out.printf("%.1f\n", bmi);
+            // % --> Format specifier 
+            System.out.printf("%.1f\n", bmi);  //%.1f translates to: "Insert the decimal number here, rounded to one digit."
             
         } else {
             // This runs if the user typed text (like "hello") instead of a number
