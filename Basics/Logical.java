@@ -3,20 +3,20 @@ import java.util.Scanner;
 public class Logical {
   
   public static void main(String[] args) {
-      System.out.println("How old are you?");
+      System.out.print("How old are you? : " );
 
       Scanner scanner = new Scanner(System.in);
-      scanner.close(); // closing scanner class
-      int age =  Integer.parseInt(scanner.nextLine());
-
-      System.out.println("Cats or Dogs?");
+      
+      int age =  Integer.parseInt(scanner.nextLine());  /*  ParseInt : It takes a String (text) .
+                                                          and forces it to become an int (a whole number)*/
+      System.out.print("Cats or Dogs?  =  " );
       String animal = scanner.nextLine(); 
 
       /* COMPARISON OPERATOS ( return true or false)
         * == equaltiy operator
         * != innequality operator 
         * <  less than
-        * >  greator thanṇ
+        * >  greator than
         * <= less than equal to
        */
 
@@ -26,9 +26,21 @@ public class Logical {
        * ?  --> NOT operator (inverses the boolean)
       */
 
-      if(age > 12 && animal.equals("Dogs")) // Comparison operator 
-      {          // && --> AND operator
-        System.out.println("Welcome!");
+      // 1. Check strict condition for Dogs
+            // 1. First Check: Specific Case for Dogs over 12
+      if (age > 12 && animal.equalsIgnoreCase("Dogs")) {
+          System.out.println("Welcome!");
+
+      // 2. Middle Check: Is the input INVALID? (Neither Dogs NOR Cats)
+      // If I type "Cats", this line becomes FALSE, so we skip it.
+      } else if (!animal.equalsIgnoreCase("Dogs") && !animal.equalsIgnoreCase("Cats")) {
+          System.out.println("Choose Between Dogs & Cats");
+
+      // 3. Final bucket: Everything else
+      // This catches "Cats" (because it skipped the error check above)
+      // This also catches "Dogs" if they are age 12 or younger.
+      } else {
+          System.out.println("Love Dogs");
       }
   }
   
