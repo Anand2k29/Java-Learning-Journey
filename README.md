@@ -21,5 +21,8 @@ This repository is organized by topic and complexity:
 * **Language:** Java
 * **IDE:** VS Code
 
+## 🔗 Helpful Resources
+* [Lifecycle and States of a Thread in Java](https://www.geeksforgeeks.org/java/lifecycle-and-states-of-a-thread-in-java/) - A quick guide to understanding thread states and transitions.
+
 ---
 *Maintained by Anand2k29*
