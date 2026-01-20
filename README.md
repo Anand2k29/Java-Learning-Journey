@@ -19,13 +19,18 @@ This repository is organized by topic and complexity:
 * Pattern Printing
 * Logical Problem Solving
 
+## 🏆 Featured Projects
+* [**QuizMaster**](https://github.com/Anand2k29/QuizMaster)
+  * A Java-based quiz application developed as a certified project for the **Vidyarthi** course.
+  * This project demonstrates my understanding of core Java concepts, logic building, and application flow.
+
 ## 🛠️ Tools Used
 * **Language:** Java
 * **IDE:** VS Code
 
 ## 🔗 Helpful Resources
 * [Complete Java Programming Course 2025 (YouTube)](https://youtube.com/playlist?list=PLA3GkZPtsafY62QhQ030p85HAer0pFDdr&si=Z4-Bp_WfYqwYAEsF) - A comprehensive playlist by Engineering Digest covering everything from installation to advanced topics.
-* [Java for Beginners by Scaler](https://www.scaler.com/topics/course/java-beginners/) - A great free course where I learned the Fundamentals of Java.
+* [Java for Beginners by Scaler](https://www.scaler.com/topics/course/java-beginners/) - A great free course where I learned the basics of Java.
 * [Lifecycle and States of a Thread in Java](https://www.geeksforgeeks.org/java/lifecycle-and-states-of-a-thread-in-java/) - A quick guide to understanding thread states and transitions.
 
 ---
