@@ -1,113 +1,145 @@
+/* * ==========================================
+ * PROGRAM: Doraemon's Gadget Bank 
+ * ==========================================
+ * * CONCEPTS USED IN THIS CODE:
+ * ------------------------------------------
+ * 1. VARIABLES (int, boolean): 
+ * - Used to store the PIN, bun count (stash), and login status.
+ * * 2. SCANNER CLASS: 
+ * - Used to capture the PIN and Menu Choices typed by the user.
+ * * 3. WHILE LOOP (Entry Control): 
+ * - Used for the LOGIN system. 
+ * - Logic: "Keep asking for the PIN *while* the user is wrong (max 3 times)."
+ * * 4. IF-ELSE & LOGICAL OPERATORS: 
+ * - Used to check if the PIN is correct and if the user has enough buns to eat.
+ * * 5. DO-WHILE LOOP (Exit Control): 
+ * - Used for the MAIN MENU.
+ * - Logic: "Show the menu *at least once*, then keep showing it until the user selects Exit."
+ * * 6. SWITCH-CASE STATEMENT: 
+ * - Used to handle the menu selection (Option 1 vs Option 2 vs Option 3) cleanly.
+ * * 7. ARRAYS & FOR LOOPS: 
+ * - Used in Option 4 to store a list of gadgets and print them one by one.
+ * * ==========================================
+ */
+
 import java.util.Scanner;
 
 public class DoraemonGadgetBank {
     public static void main(String[] args) {
-        // Scanner is our tool to listen to what the user (Nobita) types.
+        // CONCEPT: Scanner Input
         Scanner scanner = new Scanner(System.in);
         
-        // --- SCENE 1: SETTING THE VARIABLES ---
-        // Variables act like containers to store information.
-        int secretPin = 1293;       // The password required to enter.
-        int dorayakiStash = 50;     // The 'State' variable. It remembers how many buns we have.
-        int attempts = 0;           // Counter for how many times the user tried the wrong PIN.
-        int maxAttempts = 3;        // The limit before the system locks.
-        boolean pocketOpen = false; // A flag to track if login was successful.
+        System.out.println("=== 🔵 DORAEMON'S 4D POCKET SETUP 🔵 ===");
 
-        System.out.println("=== DORAEMON'S 4D POCKET BANK ===");
+        // --- SCENE 1: SETTING THE PIN ---
+        System.out.println("Nobita, please set a Secret PIN for your account.");
+        System.out.print("Enter a new 4-digit PIN: ");
+        
+        // CONCEPT: Storing User Input
+        // We save the user's chosen PIN to check against later.
+        int secretPin = scanner.nextInt(); 
+        
+        System.out.println(">> PIN Saved Successfully! System is now locking...");
+        System.out.println("-------------------------------------------------\n");
 
-        // --- SCENE 2: THE SECURITY GUARD (While Loop) ---
-        // We use a WHILE loop here because we don't know if the user will get it right
-        // on the 1st try, 2nd try, or fail completely. It loops *while* attempts are less than 3.
+        // --- VARIABLES SETUP ---
+        int dorayakiStash = 50;     // State variable (tracks food)
+        int attempts = 0;           // Counter variable
+        int maxAttempts = 3;        // Constant limit
+        boolean pocketOpen = false; // Flag variable (True/False)
+
+        System.out.println("=== 🔒 SECURITY CHECK 🔒 ===");
+
+        // --- SCENE 2: THE SECURITY GUARD ---
+        // CONCEPT: While Loop
+        // Runs repeatedly as long as the condition (attempts < 3) is true.
         while (attempts < maxAttempts) {
-            System.out.print("Nobita, enter the gadget PIN to open the pocket: ");
+            System.out.print("Enter your PIN to login: ");
             int enteredPin = scanner.nextInt();
 
+            // CONCEPT: If-Else Logic
             if (enteredPin == secretPin) {
-                System.out.println("Pocket Unlocked! Hello Nobita!\n");
-                pocketOpen = true;  // Mark success!
-                break;              // 'break' smashes out of the loop immediately. We are in!
+                System.out.println("✅ Pocket Unlocked! Welcome back, Nobita!\n");
+                pocketOpen = true;  
+                break; // CONCEPT: Break (Exits the loop immediately)
             } else {
-                attempts++; // Increment the failure counter
-                System.out.println("Wrong PIN! Gian is coming! Attempts left: " + (maxAttempts - attempts));
+                attempts++; 
+                System.out.println("❌ Wrong PIN! Gian is watching! Attempts left: " + (maxAttempts - attempts));
             }
         }
 
-        // If the loop finished and the pocket is STILL not open, it means they failed 3 times.
+        // Security check failure
         if (!pocketOpen) {
-            System.out.println("Too many wrong attempts! Doraemon is angry. System Locked.");
-            return; // 'return' stops the entire program right here.
+            System.out.println("🚫 Too many wrong attempts! System Locked.");
+            scanner.close(); 
+            return; // CONCEPT: Return (Stops the program entirely)
         }
 
-        // --- SCENE 3: THE MENU (Do-While Loop) ---
-        // We use a DO-WHILE loop here because we want to show the menu AT LEAST ONCE.
-        // Even if Nobita wants to exit immediately, he needs to see the options first.
+        // --- SCENE 3: THE MENU ---
         int choice;
+        
+        // CONCEPT: Do-While Loop
+        // Ensures the menu prints at least one time before checking the condition.
         do {
-            System.out.println("--- WHAT DO YOU WANT TO DO? ---");
-            System.out.println("1. Check Dorayaki Stash 🥞");
+            System.out.println("--- 🥞 POCKET MENU 🥞 ---");
+            System.out.println("1. Check Dorayaki Stash");
             System.out.println("2. Eat Dorayaki (Withdraw)");
             System.out.println("3. Add Dorayaki (Deposit)");
-            System.out.println("4. Check Recent Gadgets Used");
+            System.out.println("4. Check Recent Gadgets");
             System.out.println("5. Fly Away (Exit)");
             System.out.print("Select an option: ");
             choice = scanner.nextInt();
 
-            // The SWITCH statement is like a railway track changer.
-            // Based on the number 'choice', it switches us to the correct code block.
+            // CONCEPT: Switch-Case
+            // Jumps to the specific code block based on 'choice'.
             switch (choice) {
                 case 1:
-                    // Just reading the variable
-                    System.out.println(">> We have " + dorayakiStash + " Dorayakis in the pocket.");
-                    break; // 'break' prevents us from falling into Case 2 accidentally.
+                    System.out.println(">> We have " + dorayakiStash + " Dorayakis.");
+                    break;
                 
                 case 2:
-                    // LOGIC: Withdrawal
-                    System.out.print("How many Dorayakis do you want to eat? ");
+                    System.out.print("How many to eat? ");
                     int eatAmount = scanner.nextInt();
                     
-                    // VALIDATION: We must check if we have enough buns before eating.
+                    // CONCEPT: Input Validation
                     if (eatAmount > dorayakiStash) {
-                        System.out.println(">> Nobita! We don't have that many! Don't be greedy!");
+                        System.out.println(">> Not enough food! Don't be greedy!");
                     } else {
-                        dorayakiStash -= eatAmount; // Subtract from total
-                        System.out.println(">> Yummy! " + eatAmount + " eaten. Remaining: " + dorayakiStash);
+                        dorayakiStash -= eatAmount; // CONCEPT: Compound Assignment (-=)
+                        System.out.println(">> Yummy! Remaining: " + dorayakiStash);
                     }
                     break;
                 
                 case 3:
-                    // LOGIC: Deposit
-                    System.out.print("How many Dorayakis did Mom give you? ");
+                    System.out.print("How many to add? ");
                     int addAmount = scanner.nextInt();
-                    dorayakiStash += addAmount; // Add to total
-                    System.out.println(">> Great! Added to the stash. Total: " + dorayakiStash);
+                    dorayakiStash += addAmount; // CONCEPT: Compound Assignment (+=)
+                    System.out.println(">> Added! Total: " + dorayakiStash);
                     break;
 
                 case 4:
-                    // --- SCENE 4: LISTING ITEMS (For Loop) ---
-                    // We use a FOR loop because we are listing a fixed set of items.
-                    // We know exactly how long the array is, so 'for' is perfect.
-                    System.out.println("\n--- Recent Gadgets Used ---");
+                    System.out.println("\n--- Recent Gadgets ---");
+                    // CONCEPT: Arrays (A fixed list of items)
                     String[] gadgets = {"Anywhere Door", "Bamboo Copter", "Time Machine"};
                     
+                    // CONCEPT: For Loop (Iterating through the array)
                     for (int i = 0; i < gadgets.length; i++) {
-                        // i starts at 0, so (i+1) prints 1, 2, 3...
-                        System.out.println("Gadget " + (i + 1) + ": " + gadgets[i]);
+                        System.out.println((i + 1) + ". " + gadgets[i]);
                     }
-                    System.out.println("---------------------------");
+                    System.out.println("----------------------");
                     break;
 
                 case 5:
-                    System.out.println("Bamboo Copter on! flying away... Bye Bye!");
+                    System.out.println("Flying away... Bye!");
                     break;
 
                 default:
-                    // This handles numbers like 6, 99, or -1
-                    System.out.println(">> That's not a valid gadget!");
+                    System.out.println(">> Invalid option.");
             }
-            System.out.println(); // Just adds a blank line for neatness
+            System.out.println(); // Formatting
 
-        } while (choice != 5); // Keep repeating UNTIL the user chooses 5 (Exit)
+        } while (choice != 5); // CONCEPT: Loop Condition
 
-        scanner.close(); // Close the listener to save resources
+        scanner.close();
     }
 }
