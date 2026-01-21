@@ -42,7 +42,7 @@ public class MagicEightBall {
             "Very doubtful."         // Index 7
         };
 
-        System.out.println("=== 🎱 MYSTIC 8-BALL 🎱 ===");
+        System.out.println("===  MYSTIC 8-BALL  ===");
         System.out.println("Ask a Yes/No question, and I shall reveal your fate.");
         
         // --- STEP 2: THE GAME LOOP ---

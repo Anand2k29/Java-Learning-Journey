@@ -5,7 +5,7 @@ public class SecretSpyDecoder {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         
-        System.out.println("=== 🕵️ TOP SECRET SPY ENCODER ===");
+        System.out.println("===  TOP SECRET SPY ENCODER ===");
         System.out.println("Enter a message to scramble it for safety.");
         
         System.out.print("Your Message: ");

@@ -11,7 +11,7 @@ public class HogwartsSortingHat {
 
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("=== 🧙‍♂️ THE SORTING HAT CEREMONY 🧙‍♂️ ===");
+        System.out.println("===  THE SORTING HAT CEREMONY  ===");
         System.out.println("The hat is placed on your head... it speaks.");
 
         // --- QUESTION 1 ---
@@ -64,11 +64,11 @@ public class HogwartsSortingHat {
         }
 
         // Print the final result based on the winning index
-        if (winningIndex == 0) System.out.println("🦁 GRYFFINDOR!!");
-        else if (winningIndex == 1) System.out.println("🦡 HUFFLEPUFF!!");
-        else if (winningIndex == 2) System.out.println("🦅 RAVENCLAW!!");
+        if (winningIndex == 0) System.out.println(" GRYFFINDOR!!");
+        else if (winningIndex == 1) System.out.println(" HUFFLEPUFF!!");
+        else if (winningIndex == 2) System.out.println(" RAVENCLAW!!");
         else System.out.println("🐍 SLYTHERIN!!");
 
-        scanner.close();
+        scanner.close(); // Closing the scanner class
     }
 }

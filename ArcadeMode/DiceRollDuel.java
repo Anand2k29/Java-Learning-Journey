@@ -6,7 +6,7 @@ public class DiceRollDuel {
         Scanner scanner = new Scanner(System.in);
         String playAgain;
 
-        System.out.println("=== 🎲 WELCOME TO THE DICE DUEL ARENA 🎲 ===");
+        System.out.println("===  WELCOME TO THE DICE DUEL ARENA  ===");
 
         // DO-WHILE LOOP: We use this so the game runs at least once, 
         // and then we ask if the player wants to play again.
@@ -27,11 +27,11 @@ public class DiceRollDuel {
 
             // --- DETERMINING THE WINNER ---
             if (playerRoll > computerRoll) {
-                System.out.println("🏆 YOU WIN! Nice roll!");
+                System.out.println(" YOU WIN! Nice roll!");
             } else if (playerRoll < computerRoll) {
-                System.out.println("🤖 COMPUTER WINS! Better luck next time.");
+                System.out.println(" COMPUTER WINS! Better luck next time.");
             } else {
-                System.out.println("🤝 IT'S A TIE! A rare occurrence.");
+                System.out.println(" IT'S A TIE! A rare occurrence.");
             }
 
             // --- REPLAY LOGIC ---

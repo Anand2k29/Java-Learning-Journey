@@ -29,7 +29,7 @@ public class DoraemonGadgetBank {
         // CONCEPT: Scanner Input
         Scanner scanner = new Scanner(System.in);
         
-        System.out.println("=== 🔵 DORAEMON'S 4D POCKET SETUP 🔵 ===");
+        System.out.println("===  DORAEMON'S 4D POCKET SETUP ===");
 
         // --- SCENE 1: SETTING THE PIN ---
         System.out.println("Nobita, please set a Secret PIN for your account.");
@@ -48,7 +48,7 @@ public class DoraemonGadgetBank {
         int maxAttempts = 3;        // Constant limit
         boolean pocketOpen = false; // Flag variable (True/False)
 
-        System.out.println("=== 🔒 SECURITY CHECK 🔒 ===");
+        System.out.println("===  SECURITY CHECK  ===");
 
         // --- SCENE 2: THE SECURITY GUARD ---
         // CONCEPT: While Loop
@@ -59,18 +59,18 @@ public class DoraemonGadgetBank {
 
             // CONCEPT: If-Else Logic
             if (enteredPin == secretPin) {
-                System.out.println("✅ Pocket Unlocked! Welcome back, Nobita!\n");
+                System.out.println(" Pocket Unlocked! Welcome back, Nobita!\n");
                 pocketOpen = true;  
                 break; // CONCEPT: Break (Exits the loop immediately)
             } else {
                 attempts++; 
-                System.out.println("❌ Wrong PIN! Gian is watching! Attempts left: " + (maxAttempts - attempts));
+                System.out.println(" Wrong PIN! Gian is watching! Attempts left: " + (maxAttempts - attempts));
             }
         }
 
         // Security check failure
         if (!pocketOpen) {
-            System.out.println("🚫 Too many wrong attempts! System Locked.");
+            System.out.println(" Too many wrong attempts! System Locked.");
             scanner.close(); 
             return; // CONCEPT: Return (Stops the program entirely)
         }
@@ -81,7 +81,7 @@ public class DoraemonGadgetBank {
         // CONCEPT: Do-While Loop
         // Ensures the menu prints at least one time before checking the condition.
         do {
-            System.out.println("--- 🥞 POCKET MENU 🥞 ---");
+            System.out.println("---  POCKET MENU  ---");
             System.out.println("1. Check Dorayaki Stash");
             System.out.println("2. Eat Dorayaki (Withdraw)");
             System.out.println("3. Add Dorayaki (Deposit)");

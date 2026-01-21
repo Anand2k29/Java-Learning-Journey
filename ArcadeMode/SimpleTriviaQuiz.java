@@ -7,7 +7,7 @@ public class SimpleTriviaQuiz {
         Scanner scanner = new Scanner(System.in);
         int score = 0; // State variable to track points
 
-        System.out.println("=== 🧠 WELCOME TO THE JAVA QUIZ 🧠 ===");
+        System.out.println("===  WELCOME TO THE JAVA QUIZ  ===");
         System.out.println("Answer the following 3 questions correctly to win.");
 
         // --- QUESTION 1 ---
@@ -17,10 +17,10 @@ public class SimpleTriviaQuiz {
 
         // Check answer (ignoring case so 'paris' and 'Paris' both work)
         if (ans1.equalsIgnoreCase("Paris")) {
-            System.out.println("✅ Correct!");
+            System.out.println(" Correct!");
             score++; // Add 1 point
         } else {
-            System.out.println("❌ Wrong! The answer was Paris.");
+            System.out.println(" Wrong! The answer was Paris.");
         }
 
         // --- QUESTION 2 ---
@@ -30,10 +30,10 @@ public class SimpleTriviaQuiz {
         scanner.nextLine(); // FIX: Consume the leftover newline character
 
         if (ans2 == 8) {
-            System.out.println("✅ Correct!");
+            System.out.println(" Correct!");
             score++;
         } else {
-            System.out.println("❌ Wrong! Spiders have 8 legs.");
+            System.out.println(" Wrong! Spiders have 8 legs.");
         }
 
         // --- QUESTION 3 ---
@@ -42,10 +42,10 @@ public class SimpleTriviaQuiz {
         String ans3 = scanner.nextLine();
 
         if (ans3.equalsIgnoreCase("Mars")) {
-            System.out.println("✅ Correct!");
+            System.out.println(" Correct!");
             score++;
         } else {
-            System.out.println("❌ Wrong! It is Mars.");
+            System.out.println(" Wrong! It is Mars.");
         }
 
         // --- FINAL RESULTS ---
@@ -54,11 +54,11 @@ public class SimpleTriviaQuiz {
 
         // Give a specific message based on performance
         if (score == 3) {
-            System.out.println("Rank: 🌟 GENIUS");
+            System.out.println("Rank:  GENIUS");
         } else if (score >= 1) {
-            System.out.println("Rank: 😊 GOOD EFFORT");
+            System.out.println("Rank:  GOOD EFFORT");
         } else {
-            System.out.println("Rank: 📚 STUDY MORE");
+            System.out.println("Rank:  STUDY MORE");
         }
         
         scanner.close();
