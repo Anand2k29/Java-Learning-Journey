@@ -30,7 +30,7 @@ This repository is organized by topic and complexity:
 
 ## 🔗 Helpful Resources
 * [Complete Java Programming Course 2025 (YouTube)](https://youtube.com/playlist?list=PLA3GkZPtsafY62QhQ030p85HAer0pFDdr&si=Z4-Bp_WfYqwYAEsF) - A comprehensive playlist by Engineering Digest covering everything from installation to advanced topics.
-* [Java for Beginners by Scaler](https://www.scaler.com/topics/course/java-beginners/) - A great free course where I learned the basics of Java.
+* [Java for Beginners by Scaler](https://www.scaler.com/topics/course/java-beginners/) - A great free course where I learned the Fundamentals of Java.
 * [Lifecycle and States of a Thread in Java](https://www.geeksforgeeks.org/java/lifecycle-and-states-of-a-thread-in-java/) - A quick guide to understanding thread states and transitions.
 
 ---
