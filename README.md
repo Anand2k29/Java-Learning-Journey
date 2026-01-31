@@ -21,7 +21,7 @@ This repository is organized by topic and complexity:
 
 ## 🏆 Featured Projects
 * [**QuizMaster**](https://github.com/Anand2k29/QuizMaster)
-  * A Java-based quiz application developed as a certified project for the **Vidyarthi** course.
+  * A Java-based quiz application developed as a certified project for the **Vityarthi** course.
   * This project demonstrates my understanding of core Java concepts, logic building, and application flow.
 
 ## 🛠️ Tools Used
